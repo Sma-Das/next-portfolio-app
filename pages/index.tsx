@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import LandingPage from "../sections/landing-page";
 
 const Home: NextPage = () => {
   return (
@@ -31,7 +32,9 @@ const Home: NextPage = () => {
         <meta name="theme-color" content="#ffffff"></meta>
       </Head>
 
-      <main></main>
+      <main>
+        <LandingPage />
+      </main>
 
       <footer></footer>
     </div>
