@@ -32,11 +32,7 @@ const Home: NextPage = () => {
         <meta name="theme-color" content="#ffffff"></meta>
       </Head>
 
-      <main>
-        <LandingPage />
-      </main>
-
-      <footer></footer>
+      <LandingPage />
     </div>
   );
 };
