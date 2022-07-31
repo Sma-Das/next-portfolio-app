@@ -1,11 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Sma Das</title>
         <meta name="description" content="Sma Das' Portfolio" />
@@ -33,9 +31,9 @@ const Home: NextPage = () => {
         <meta name="theme-color" content="#ffffff"></meta>
       </Head>
 
-      <main className={styles.main}></main>
+      <main></main>
 
-      <footer className={styles.footer}></footer>
+      <footer></footer>
     </div>
   );
 };
