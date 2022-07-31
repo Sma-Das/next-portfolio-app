@@ -29,24 +29,7 @@ const LandingPage: React.FC = () => {
   return (
     <>
       <div className="min-h-screen flex flex-col justify-center items-center">
-        {/* <VideoBackground source={backgroundSource} /> */}
-        <video
-          className="absolute w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          onContextMenu={(e) => e.preventDefault()}
-        >
-          <source
-            src={`${backgroundSource}.mp4`}
-            type="video/mp4; codecs=hvc1"
-          />
-          <source
-            src={`${backgroundSource}.webm`}
-            type="video/webm; codecs=vp9"
-          />
-        </video>
+        <VideoBackground source={backgroundSource} />
         <div className="flex-grow-0 pt-10 transition-opacity duration-1000">
           <Image
             src="/assets/icons/icon_s_100.png"
