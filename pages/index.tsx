@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Navigation from "../components/naviation-bar";
+import Layout from "../components/layout";
+import Sidebar from "../components/sidebar";
 import AboutMe from "../sections/about-me";
 import LandingPage from "../sections/landing-page";
 
@@ -36,15 +37,20 @@ const Home: NextPage = () => {
 
       <LandingPage />
 
-      <Navigation
-        links={{
-          Home: "#",
-          Home1: "#",
-          Home2: "#",
-        }}
-      />
-      <AboutMe />
-      <AboutMe />
+      <div className="flex">
+        {/* <div className=" h-screen sticky top-0 hidden w-1/5 xl:w-[10%] md:flex justify-center z-10 shadow-2xl">
+          <div className="">Sidebar</div>
+        </div> */}
+        <Sidebar>
+          <div className="">Sidebar</div>
+        </Sidebar>
+        <Layout>
+          <AboutMe />
+          <div className="h-screen">Hello</div>
+          <div className="h-screen">Hello</div>
+          <div className="h-screen">Hello</div>
+        </Layout>
+      </div>
     </div>
   );
 };
