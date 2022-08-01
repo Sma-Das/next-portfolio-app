@@ -1,27 +1,6 @@
 import Image from "next/image";
 import React from "react";
-
-type LandingPageProps = {
-  source: string;
-};
-
-const VideoBackground: React.FC<LandingPageProps> = ({ source }) => {
-  return (
-    <>
-      <video
-        className="absolute w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-        onContextMenu={(e) => e.preventDefault()}
-      >
-        <source src={`${source}.mp4`} type="video/mp4; codecs=hvc1" />
-        <source src={`${source}.webm`} type="video/webm; codecs=vp9" />
-      </video>
-    </>
-  );
-};
+import VideoBackground from "../components/video-background";
 
 const LandingPage: React.FC = () => {
   const backgroundSource: string = "/assets/background";
