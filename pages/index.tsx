@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Layout from "../components/layout";
-import Sidebar from "../components/sidebar";
+import SidebarLayout from "../components/sidebar-layout";
 import AboutMe from "../sections/about-me";
 import Education from "../sections/education";
 import Experience from "../sections/experience";
@@ -41,9 +41,9 @@ const Home: NextPage = () => {
       <LandingPage />
 
       <div className="flex">
-        <Sidebar>
+        <SidebarLayout>
           <div className="">Sidebar</div>
-        </Sidebar>
+        </SidebarLayout>
         <Layout>
           <AboutMe />
           <Education />
