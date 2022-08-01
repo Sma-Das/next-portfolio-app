@@ -1,15 +1,23 @@
 import Image from "next/image";
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import VideoBackground from "../components/video-background";
 
 const LandingPage: React.FC = () => {
   const backgroundSource: string = "/assets/background";
+  const [opacity, setOpacity] = useState(0);
+  useEffect(() => {
+    setOpacity(100);
+  }, []);
 
   return (
     <>
       <div className="min-h-screen flex flex-col justify-center items-center">
         <VideoBackground source={backgroundSource} />
-        <div className="flex-grow-0 pt-10 transition-opacity duration-1000">
+        <div
+          className={`flex-grow-0 pt-10 transition-opacity duration-1000 opacity-${opacity}`}
+        >
           <Image
             src="/assets/icons/icon_s_100.png"
             height="75"
