@@ -3,7 +3,10 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import Sidebar from "../components/sidebar";
 import AboutMe from "../sections/about-me";
+import Education from "../sections/education";
+import Experience from "../sections/experience";
 import LandingPage from "../sections/landing-page";
+import Skills from "../sections/skills";
 
 const Home: NextPage = () => {
   return (
@@ -38,17 +41,14 @@ const Home: NextPage = () => {
       <LandingPage />
 
       <div className="flex">
-        {/* <div className=" h-screen sticky top-0 hidden w-1/5 xl:w-[10%] md:flex justify-center z-10 shadow-2xl">
-          <div className="">Sidebar</div>
-        </div> */}
         <Sidebar>
           <div className="">Sidebar</div>
         </Sidebar>
         <Layout>
           <AboutMe />
-          <div className="h-screen">Hello</div>
-          <div className="h-screen">Hello</div>
-          <div className="h-screen">Hello</div>
+          <Education />
+          <Experience />
+          <Skills />
         </Layout>
       </div>
     </div>
