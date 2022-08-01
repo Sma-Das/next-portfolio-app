@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Navigation from "../components/naviation-bar";
+import AboutMe from "../sections/about-me";
 import LandingPage from "../sections/landing-page";
 
 const Home: NextPage = () => {
@@ -33,6 +35,16 @@ const Home: NextPage = () => {
       </Head>
 
       <LandingPage />
+
+      <Navigation
+        links={{
+          Home: "#",
+          Home1: "#",
+          Home2: "#",
+        }}
+      />
+      <AboutMe />
+      <AboutMe />
     </div>
   );
 };
