@@ -1,29 +1,32 @@
 import Image from "next/image";
+import SidebarNavigation from "./sidebar-navigation";
 
 const Sidebar: React.FC = () => {
+  const routes = [
+    ["#about-me", "About Me"],
+    ["#experience", "Experience"],
+    ["#education", "Education"],
+    ["#skills", "Skills"],
+  ];
+
   return (
     <>
-      <div className="mt-5 relative h-[150px] w-[150px] flex-shrink-0">
-        <Image
-          layout="fill"
-          src="/assets/Sma Das.jpg"
-          alt="Sma Das"
-          className="rounded-full"
-        />
+      <div className="mt-5 relative aspect-square w-5/6 flex-shrink-0 px-2">
+        <a href="#">
+          <Image
+            layout="fill"
+            src="/assets/Sma Das.jpg"
+            alt="Sma Das"
+            className="rounded-full"
+          />
+        </a>
       </div>
-      <nav className="basis-3/4 grow text-center w-full flex flex-col ">
-        <ol className="flex flex-col flex-1 items-center justify-center">
-          <li className="my-3">About Me</li>
-          <li className="my-3">Experience</li>
-          <li className="my-3">Education</li>
-          <li className="my-3">Skills</li>
-        </ol>
-      </nav>
+      <SidebarNavigation routes={routes} />
       <section
         about="socials"
         className="pb-12 w-full flex-shrink-0 grow bg-slate-50 "
       >
-        <div className="flex justify-around items-center">
+        <div className="flex justify-evenly items-center">
           <div>
             <a href="#">hello</a>
           </div>
