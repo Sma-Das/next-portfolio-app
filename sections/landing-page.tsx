@@ -4,7 +4,7 @@ import { useState } from "react";
 import VideoBackground from "../components/video-background";
 
 const LandingPage: React.FC = () => {
-  const backgroundSource: string = "/assets/background";
+  const backgroundSource = "/assets/background";
   const [imageLoaded, setImageLoaded] = useState(false);
   const handleImageLoaded = useCallback(() => {
     setImageLoaded(true);
@@ -44,7 +44,6 @@ const LandingPage: React.FC = () => {
               height={105 / 3}
               width={188 / 3}
               alt="arrow down"
-              className=""
             />
           </a>
         </div>
