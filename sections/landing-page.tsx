@@ -13,7 +13,7 @@ const LandingPage: React.FC = () => {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col justify-center items-center">
+      <div className="min-h-screen flex flex-col justify-center items-center translate-y-0">
         <VideoBackground source={backgroundSource} />
         <div
           className={`flex-grow-0 pt-10 transition-opacity duration-1000 opacity-${opacity}`}
