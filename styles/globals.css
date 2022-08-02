@@ -10,6 +10,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   letter-spacing: 0em;
   line-height: 1.1;
+  scroll-behavior: smooth;
 }
 
 a {
