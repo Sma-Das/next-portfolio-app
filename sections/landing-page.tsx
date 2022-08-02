@@ -38,12 +38,14 @@ const LandingPage: React.FC = () => {
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Image
-            src="/assets/icons/arrow_down.png"
-            height={105 / 3}
-            width={188 / 3}
-            alt="arrow down"
-          />
+          <a href="#about-me">
+            <Image
+              src="/assets/icons/arrow_down.png"
+              height={105 / 3}
+              width={188 / 3}
+              alt="arrow down"
+            />
+          </a>
         </div>
       </div>
     </>

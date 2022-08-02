@@ -18,14 +18,16 @@ const Sidebar: React.FC = () => {
 
   return (
     <>
-      <div className="mt-5 relative box-border pt-[84%] w-5/6 flex-shrink-0 px-2 ">
-        {/* <div className="mt-5 relative aspect-square w-5/6 flex-shrink-0 px-2"> */}
-        <Image
-          layout="fill"
-          src="/assets/sma_das.jpg"
-          alt="Sma Das"
-          className="rounded-full"
-        />
+      <div className="mt-5 relative box-border pt-[84%] w-5/6 flex-shrink-0 px-2">
+        {/* <div className="mt-5 relative aspect-square w-5/6 flex-shrink-0 px-2 hover:w-11/12"> */}
+        <a href="#about-me">
+          <Image
+            layout="fill"
+            src="/assets/sma_das.jpg"
+            alt="Sma Das"
+            className="rounded-full"
+          />
+        </a>
       </div>
       <SidebarNavigation routes={routes} />
       <section

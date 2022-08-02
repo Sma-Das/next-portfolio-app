@@ -47,8 +47,8 @@ const Home: NextPage = () => {
         </SidebarLayout>
         <Layout>
           <AboutMe />
-          <Education />
           <Experience />
+          <Education />
           <Skills />
         </Layout>
       </div>

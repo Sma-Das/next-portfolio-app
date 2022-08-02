@@ -1,7 +1,10 @@
 const AboutMe: React.FC = () => {
   return (
     <>
-      <section id="about-me" className="h-screen flex flex-col">
+      <section
+        id="about-me"
+        className="h-screen flex flex-col after:border-b-2 after:w-4/5 after:mx-[10%]"
+      >
         <div className="text-center py-5">
           <h1 className="font-bold text-3xl drop-shadow-xl xl:text-5xl">
             About Me
