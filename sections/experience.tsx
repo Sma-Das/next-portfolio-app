@@ -1,4 +1,4 @@
-const AboutMe: React.FC = () => {
+const Experience: React.FC = () => {
   return (
     <>
       <div className="h-screen">Hello, my name is bob</div>
@@ -6,4 +6,4 @@ const AboutMe: React.FC = () => {
   );
 };
 
-export default AboutMe;
+export default Experience;
