@@ -34,7 +34,7 @@ const LandingPage: React.FC = () => {
           </h2>
         </div>
         <div
-          className={`flex-grow-0 pb-2 xl:pb-10 transition-all duration-1000 animate-bounce ${
+          className={`flex-grow-0 pb-20 md:pb-10  xl:pb-10 transition-all duration-1000 animate-bounce ${
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -44,6 +44,7 @@ const LandingPage: React.FC = () => {
               height={105 / 3}
               width={188 / 3}
               alt="arrow down"
+              className=""
             />
           </a>
         </div>
