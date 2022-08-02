@@ -12,14 +12,12 @@ const Sidebar: React.FC = () => {
   return (
     <>
       <div className="mt-5 relative aspect-square w-5/6 flex-shrink-0 px-2">
-        <a href="#">
-          <Image
-            layout="fill"
-            src="/assets/Sma Das.jpg"
-            alt="Sma Das"
-            className="rounded-full"
-          />
-        </a>
+        <Image
+          layout="fill"
+          src="/assets/sma_das.jpg"
+          alt="Sma Das"
+          className="rounded-full"
+        />
       </div>
       <SidebarNavigation routes={routes} />
       <section
