@@ -10,7 +10,7 @@ const SidebarNavigation: React.FC<SidebarNavigationProps> = ({ routes }) => {
           <a
             key={idx}
             href={route}
-            className="p-1 animate-underline after:bg-black active:font-bold my-3"
+            className="p-1 animate-underline hover:font-bold after:bg-black active:font-bold my-3"
           >
             {displayText}
           </a>
