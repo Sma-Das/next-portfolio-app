@@ -15,7 +15,7 @@ const AboutMe: React.FC = () => {
           </h2>
         </div>
         <div className="flex flex-col flex-grow p-5 justify-evenly">
-          <p className="flex-shrink-0 leading-loose">
+          <div className="flex-shrink-0 leading-loose">
             I am currently a 3<sup>rd</sup> year student at Rochester Institute
             of Technology pursing an undergraduate degree in Computing Security
             with a minor in Economics.
@@ -29,8 +29,8 @@ const AboutMe: React.FC = () => {
             <code>JavaScript</code> /<code>TypeScript</code>, <code>C</code>/
             <code>C++</code>, <code>Java</code>, and I am currently learning{" "}
             <code>Go</code> and <code>Rust</code>.
-          </p>
-          <p className="leading-loose">
+          </div>
+          <div className="leading-loose">
             My course work includes:
             <br />
             <br />
@@ -41,11 +41,11 @@ const AboutMe: React.FC = () => {
               <li>Database and Data Modeling</li>
               <li>System Administration 1 & 2</li>
             </ul>
-          </p>
-          <p className="leading-loose">
+          </div>
+          <div className="leading-loose">
             My current academic standing rests at a cGPA of 3.84/4 with my
             previous two semesters yielding a GPA of 3.91/4 and 4/4
-          </p>
+          </div>
         </div>
       </section>
     </>
