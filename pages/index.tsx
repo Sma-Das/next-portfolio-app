@@ -42,9 +42,7 @@ const Home: NextPage = () => {
       <LandingPage />
 
       <div className="flex">
-        <SidebarLayout>
-          <Sidebar />
-        </SidebarLayout>
+        <Sidebar />
         <Layout>
           <AboutMe />
           <Experience />
