@@ -14,6 +14,7 @@ const Sidebar: React.FC = () => {
     ["#about-me", "About Me"],
     ["#experience", "Experience"],
     ["#education", "Education"],
+    ["#certifications", "Certifications"],
     ["#skills", "Skills"],
   ];
 
