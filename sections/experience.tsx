@@ -13,10 +13,10 @@ const Experience: React.FC = () => {
           </h1>
         </div>
         <div className="flex-grow p-5 ">
-          <div className="grid gap-1 gap-y-10 grid-flow-row grid-cols-8 [&>div]:shadow-md [&>div]:bg-white items-center">
+          <div className="grid  gap-y-10 grid-flow-row grid-cols-8 [&>div]:shadow-md [&>div]:bg-white items-center">
             <span className="hidden md:block justify-self-center">
               <Image
-                src="/assets/sma_das.jpg"
+                src="/assets/company_logos/unitech.png"
                 width="100%"
                 height="100%"
                 alt="logo"
@@ -24,7 +24,11 @@ const Experience: React.FC = () => {
               />
             </span>
             <div className="grid grid-cols-4 grid-rows-5 col-span-full md:col-span-7 p-3">
-              <div className="col-span-2 row-span-1 font-bold">Position</div>
+              <div className="col-span-2 row-span-1 font-bold">
+                <p className="animate-underline after:bg-black pb-1">
+                  Position
+                </p>
+              </div>
               <div className="col-span-2 row-span-1 text-right font-bold">
                 Duration
               </div>
