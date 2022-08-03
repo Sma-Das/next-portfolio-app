@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import Sidebar from "../components/sidebar";
 import SidebarLayout from "../components/sidebar-layout";
 import AboutMe from "../sections/about-me";
+import Certifications from "../sections/certifications";
 import Education from "../sections/education";
 import Experience from "../sections/experience";
 import LandingPage from "../sections/landing-page";
@@ -45,6 +46,7 @@ const Home: NextPage = () => {
           <AboutMe />
           <Experience />
           <Education />
+          <Certifications />
           <Skills />
         </Layout>
       </div>
