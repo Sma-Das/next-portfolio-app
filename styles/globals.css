@@ -10,6 +10,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   letter-spacing: 0em;
   line-height: 1.1;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -18,4 +19,26 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.animate-underline {
+  display: inline-block;
+  position: relative;
+}
+
+.animate-underline:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom top;
+  transition: transform 0.25s ease-out;
+}
+
+.animate-underline:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom top;
 }

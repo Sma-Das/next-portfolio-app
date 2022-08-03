@@ -1,20 +1,26 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import VideoBackground from "../components/video-background";
 
 const LandingPage: React.FC = () => {
-  const backgroundSource: string = "/assets/background";
+  const backgroundSource = "/assets/background";
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <>
-      <div className="min-h-screen flex flex-col justify-center items-center">
+      <div className="min-h-screen flex flex-col justify-center items-center translate-y-0">
         <VideoBackground source={backgroundSource} />
-        <div className="flex-grow-0 pt-10 transition-opacity duration-1000">
+        <div
+          className={`flex-grow-0 pt-10 transition-opacity duration-1000 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <Image
             src="/assets/icons/icon_s_100.png"
             height="75"
             width="75"
             alt="logo"
+            onLoad={() => setImageLoaded(true)}
           />
         </div>
         <div className="p-12 font-bold z-10 text-white drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center flex-1 flex items-center justify-center flex-col">
@@ -23,13 +29,19 @@ const LandingPage: React.FC = () => {
             Cybersecurity & Software Development
           </h2>
         </div>
-        <div className="flex-grow-0 pb-2 xl:pb-10 transition-all duration-1000 animate-bounce">
-          <Image
-            src="/assets/icons/arrow_down.png"
-            height={105 / 3}
-            width={188 / 3}
-            alt="arrow down"
-          />
+        <div
+          className={`flex-grow-0 pb-20 md:pb-10  xl:pb-10 transition-all duration-1000 animate-bounce ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <a href="#about-me">
+            <Image
+              src="/assets/icons/arrow_down.png"
+              height={35}
+              width={63}
+              alt="arrow down"
+            />
+          </a>
         </div>
       </div>
     </>

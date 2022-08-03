@@ -1,6 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Layout from "../components/layout";
+import Sidebar from "../components/sidebar";
+import AboutMe from "../sections/about-me";
+import Education from "../sections/education";
+import Experience from "../sections/experience";
 import LandingPage from "../sections/landing-page";
+import Skills from "../sections/skills";
 
 const Home: NextPage = () => {
   return (
@@ -31,8 +37,16 @@ const Home: NextPage = () => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff"></meta>
       </Head>
-
       <LandingPage />
+      <div className="flex">
+        <Sidebar />
+        <Layout>
+          <AboutMe />
+          <Experience />
+          <Education />
+          <Skills />
+        </Layout>
+      </div>
     </div>
   );
 };
