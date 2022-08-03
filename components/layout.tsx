@@ -3,7 +3,7 @@ type LayoutProps = {
 };
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return <div className="bg-white grow">{children}</div>;
+  return <div className="bg-slate-50 grow">{children}</div>;
 };
 
 export default Layout;

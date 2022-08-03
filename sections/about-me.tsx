@@ -3,7 +3,7 @@ const AboutMe: React.FC = () => {
     <>
       <section
         id="about-me"
-        className="h-screen flex flex-col after:border-b-2 after:w-4/5 after:mx-[10%]"
+        className="flex flex-col after:border-b-2 after:w-4/5 after:mx-[10%] after:border-gray-500 bg-slate-50 mb-10"
       >
         <div className="text-center py-5">
           <h1 className="font-bold text-3xl drop-shadow-xl xl:text-5xl">
@@ -33,7 +33,7 @@ const AboutMe: React.FC = () => {
           <div className="leading-loose">
             My course work includes:
             <br />
-            <br />
+            <br className="hidden md:block" />
             <ul className="list-item list-disc list-outside ml-10 marker:text-gray-400">
               <li>Reverse Engineering and Malware Analysis</li>
               <li>Computer System Forensics</li>
@@ -42,7 +42,7 @@ const AboutMe: React.FC = () => {
               <li>System Administration 1 & 2</li>
             </ul>
           </div>
-          <div className="leading-loose">
+          <div className="leading-loose py-5 md:py-3">
             My current academic standing rests at a cGPA of 3.84/4 with my
             previous two semesters yielding a GPA of 3.91/4 and 4/4
           </div>
