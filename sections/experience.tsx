@@ -1,6 +1,42 @@
-import Image from "next/image";
+import Grid from "../components/grid";
+import GridItem from "../components/grid-item";
 
 const Experience: React.FC = () => {
+  const positions = [
+    {
+      heading: "Cloud & Software Engineer Lead",
+      location: "Unitech",
+      duration: "May 2022 - Current",
+      gridImage: "/assets/company_logos/unitech.png",
+      description:
+        "Responsible for deploying a full backend using AWS to implement secure data and file storage using Lambda, S3 buckets, DynamoDB, and AWS Cognito. Made use of AWS Amplify to synchronize these technologies to service clients.",
+    },
+    {
+      heading: "Student Government Technology Coordinator",
+      location: "Rochester Institute of Technology Dubai",
+      duration: "Jan 2022 - Current",
+      gridImage: "/assets/company_logos/rit.png",
+      description:
+        "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
+    },
+    {
+      heading: "Database Developer",
+      location: "Rochester Institute of Technology Dubai",
+      duration: "Jan 2022 - May 2022",
+      gridImage: "/assets/company_logos/rit-logo.jpg",
+      description:
+        "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
+    },
+    {
+      heading: "Pentetration Tester",
+      location: "TryHackMe",
+      duration: "Jan 2021 - Dec 2021",
+      gridImage: "/assets/company_logos/tryhackme-logo.png",
+      description:
+        "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
+    },
+  ];
+
   return (
     <>
       <section
@@ -12,57 +48,12 @@ const Experience: React.FC = () => {
             Experience
           </h1>
         </div>
-        <div className="flex-grow p-5 ">
-          <div className="grid  gap-y-10 grid-flow-row grid-cols-8 [&>div]:shadow-md [&>div]:bg-white items-center">
-            <span className="hidden md:block justify-self-center">
-              <Image
-                src="/assets/company_logos/unitech.png"
-                width="100%"
-                height="100%"
-                alt="logo"
-                className="rounded-full scale-125"
-              />
-            </span>
-            <div className="grid grid-cols-4 grid-rows-5 col-span-full md:col-span-7 p-3 text-xs md:text-base">
-              <div className="col-span-2 row-span-1 font-bold ">
-                <p className="animate-underline after:bg-black pb-1">
-                  Cloud and Software Engineer Lead
-                </p>
-              </div>
-              <div className="col-span-2 row-span-1 text-right font-bold md:pr-3">
-                <p className="animate-underline after:bg-black pb-1 ">
-                  May 2022 - Current
-                </p>
-              </div>
-              <div className="col-span-4 row-span-1 md:mt-1 text-slate-600 before:content-['@']">
-                <p className="animate-underline after:bg-slate-600">Unitech</p>
-              </div>
-              <div className="col-span-4 row-span-2 md:mt-3 text-slate-500">
-                Description
-              </div>
-            </div>
-            <span className="hidden md:block justify-self-center">
-              <Image
-                src="/assets/sma_das.jpg"
-                width="100%"
-                height="100%"
-                alt="logo"
-                className="rounded-full"
-              />
-            </span>
-            <div className="grid grid-cols-4 grid-rows-5 col-span-full md:col-span-7 p-3">
-              <div className="col-span-2 row-span-1 font-bold">Position</div>
-              <div className="col-span-2 row-span-1 text-right font-bold">
-                Duration
-              </div>
-              <div className="col-span-4 row-span-1 mt-1 text-slate-600">
-                Company
-              </div>
-              <div className="col-span-4 row-span-2 mt-3 text-slate-500">
-                Description
-              </div>
-            </div>
-          </div>
+        <div className=" xl:mr-12 p-5 ">
+          <Grid>
+            {positions.map((position, idx) => (
+              <GridItem key={idx} {...position} />
+            ))}
+          </Grid>
         </div>
       </section>
     </>
