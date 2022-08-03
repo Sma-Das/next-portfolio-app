@@ -12,10 +12,10 @@ const Education: React.FC = () => {
         "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
     },
     {
-      heading: "Pentetration Tester",
-      location: "TryHackMe",
-      duration: "Jan 2021 - Dec 2021",
-      gridImage: "/assets/company_logos/tryhackme-logo.png",
+      heading: "Highschool",
+      location: "Crawford College Sandton",
+      duration: "Jan 2015 - Dec 2019",
+      gridImage: "/assets/company_logos/crawford.png",
       description:
         "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
     },
@@ -24,7 +24,7 @@ const Education: React.FC = () => {
     <>
       <section
         id="education"
-        className="min-h-screen flex flex-col after:border-b-2 after:w-4/5 after:mx-[10%] after:border-gray-500 bg-slate-50 pb-10 after:pt-10"
+        className="flex flex-col after:border-b-2 after:w-4/5 after:mx-[10%] after:border-gray-500 bg-slate-50 pb-10 after:pt-10"
       >
         <div className="text-center py-5">
           <h1 className="font-bold text-3xl drop-shadow-xl xl:text-5xl">
