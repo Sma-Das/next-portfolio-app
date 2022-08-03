@@ -1,14 +1,10 @@
 import Image from "next/image";
-import React, { useCallback } from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import VideoBackground from "../components/video-background";
 
 const LandingPage: React.FC = () => {
   const backgroundSource = "/assets/background";
   const [imageLoaded, setImageLoaded] = useState(false);
-  const handleImageLoaded = useCallback(() => {
-    setImageLoaded(true);
-  }, []);
 
   return (
     <>
@@ -24,7 +20,7 @@ const LandingPage: React.FC = () => {
             height="75"
             width="75"
             alt="logo"
-            onLoad={handleImageLoaded}
+            onLoad={() => setImageLoaded(true)}
           />
         </div>
         <div className="p-12 font-bold z-10 text-white drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center flex-1 flex items-center justify-center flex-col">
@@ -41,8 +37,8 @@ const LandingPage: React.FC = () => {
           <a href="#about-me">
             <Image
               src="/assets/icons/arrow_down.png"
-              height={105 / 3}
-              width={188 / 3}
+              height={35}
+              width={63}
               alt="arrow down"
             />
           </a>
