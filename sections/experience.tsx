@@ -20,22 +20,24 @@ const Experience: React.FC = () => {
                 width="100%"
                 height="100%"
                 alt="logo"
-                className="rounded-full"
+                className="rounded-full scale-125"
               />
             </span>
-            <div className="grid grid-cols-4 grid-rows-5 col-span-full md:col-span-7 p-3">
-              <div className="col-span-2 row-span-1 font-bold">
+            <div className="grid grid-cols-4 grid-rows-5 col-span-full md:col-span-7 p-3 text-xs md:text-base">
+              <div className="col-span-2 row-span-1 font-bold ">
                 <p className="animate-underline after:bg-black pb-1">
-                  Position
+                  Cloud and Software Engineer Lead
                 </p>
               </div>
-              <div className="col-span-2 row-span-1 text-right font-bold">
-                Duration
+              <div className="col-span-2 row-span-1 text-right font-bold md:pr-3">
+                <p className="animate-underline after:bg-black pb-1 ">
+                  May 2022 - Current
+                </p>
               </div>
-              <div className="col-span-4 row-span-1 mt-1 text-slate-600">
-                Company
+              <div className="col-span-4 row-span-1 md:mt-1 text-slate-600 before:content-['@']">
+                <p className="animate-underline after:bg-slate-600">Unitech</p>
               </div>
-              <div className="col-span-4 row-span-2 mt-3 text-slate-500">
+              <div className="col-span-4 row-span-2 md:mt-3 text-slate-500">
                 Description
               </div>
             </div>
