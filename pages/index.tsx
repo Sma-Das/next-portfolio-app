@@ -38,9 +38,7 @@ const Home: NextPage = () => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff"></meta>
       </Head>
-
       <LandingPage />
-
       <div className="flex">
         <Sidebar />
         <Layout>
