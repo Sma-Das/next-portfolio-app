@@ -1,25 +1,26 @@
 import Grid from "../components/grid";
 import GridItem from "../components/grid-item";
 
+const education = [
+  {
+    heading: "BSc Computing Security",
+    location: "Rochester Institute of Technology Dubai",
+    duration: "Jan 2020 - Dec 2023",
+    gridImage: "/assets/company_logos/rit-logo.jpg",
+    description:
+      "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
+  },
+  {
+    heading: "Highschool",
+    location: "Crawford College Sandton",
+    duration: "Jan 2015 - Dec 2019",
+    gridImage: "/assets/company_logos/crawford.png",
+    description:
+      "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
+  },
+];
+
 const Education: React.FC = () => {
-  const positions = [
-    {
-      heading: "BSc Computing Security",
-      location: "Rochester Institute of Technology Dubai",
-      duration: "Jan 2020 - Dec 2023",
-      gridImage: "/assets/company_logos/rit-logo.jpg",
-      description:
-        "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
-    },
-    {
-      heading: "Highschool",
-      location: "Crawford College Sandton",
-      duration: "Jan 2015 - Dec 2019",
-      gridImage: "/assets/company_logos/crawford.png",
-      description:
-        "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
-    },
-  ];
   return (
     <>
       <section
@@ -33,7 +34,7 @@ const Education: React.FC = () => {
         </div>
         <div className="flex-grow xl:mr-12 p-5">
           <Grid>
-            {positions.map((position, idx) => (
+            {education.map((position, idx) => (
               <GridItem key={idx} {...position} />
             ))}
           </Grid>
