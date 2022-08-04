@@ -8,7 +8,7 @@ const experience = [
     duration: "May 2022 - Current",
     gridImage: "/assets/company_logos/unitech.png",
     description:
-      "Responsible for deploying a full backend using AWS to implement secure data and file storage using Lambda, S3 buckets, DynamoDB, and AWS Cognito. Made use of AWS Amplify to synchronize these technologies to service clients.",
+      "Responsible for deploying a full backend using AWS to implement secure data and file storage using Lambda, S3 buckets, DynamoDB, and AWS Cognito.\nAWS Amplify was used to synchronize these technologies to service clients.",
   },
   {
     heading: "Student Government Technology Coordinator",
@@ -16,7 +16,7 @@ const experience = [
     duration: "Jan 2022 - Current",
     gridImage: "/assets/company_logos/rit.png",
     description:
-      "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
+      "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app as well as remediating any issues encountered by the Student Body",
   },
   {
     heading: "Database Developer",
@@ -24,7 +24,7 @@ const experience = [
     duration: "Jan 2022 - May 2022",
     gridImage: "/assets/company_logos/rit-logo.jpg",
     description:
-      "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
+      "Developed a MySQL database that was responsibe to store information about  all students, employers, and courses offered by the university. Also developed a CLI interface using Python to streamline updating information in the database as well as introduce security measures preventing SQL Injection.",
   },
   {
     heading: "Pentetration Tester",
@@ -32,7 +32,7 @@ const experience = [
     duration: "Jan 2021 - Dec 2021",
     gridImage: "/assets/company_logos/tryhackme-logo.png",
     description:
-      "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
+      "Performed penetration tests on simulated machines to explore potential vunerablities. Also introduced to other sectors of cybersecurity such as blue-teaming as well as malware analysis, programming security, and industry-standard tools such as Burp Suite and Nmap",
   },
 ];
 const Experience: React.FC = () => {
