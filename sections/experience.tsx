@@ -35,7 +35,6 @@ const experience = [
       "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
   },
 ];
-
 const Experience: React.FC = () => {
   return (
     <>
