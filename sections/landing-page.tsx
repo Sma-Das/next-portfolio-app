@@ -1,14 +1,31 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import VideoBackground from "../components/video-background";
+import { ScrollContext } from "../utils/scroll-observer";
 
 const LandingPage: React.FC = () => {
   const backgroundSource = "/assets/background";
   const [imageLoaded, setImageLoaded] = useState(false);
 
+  const { scrollY } = useContext(ScrollContext);
+
+  let scrollPosition = 0;
+
+  const mainRef = useRef<HTMLDivElement>(null);
+
+  const { current: container } = mainRef;
+
+  if (container !== null) {
+    scrollPosition = Math.min(1, scrollY / container.clientHeight);
+  }
+
   return (
     <>
-      <div className="min-h-screen flex flex-col justify-center items-center translate-y-0">
+      <div
+        ref={mainRef}
+        className="min-h-screen flex flex-col justify-center items-center translate-y-0 sticky top-0 -z-10"
+        style={{ transform: `translateY(-${scrollPosition * 20}vh)` }}
+      >
         <VideoBackground source={backgroundSource} />
         <div
           className={`flex-grow-0 pt-10 transition-opacity duration-1000 ${
@@ -34,14 +51,12 @@ const LandingPage: React.FC = () => {
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
         >
-          <a href="#about-me">
-            <Image
-              src="/assets/icons/arrow_down.png"
-              height={35}
-              width={63}
-              alt="arrow down"
-            />
-          </a>
+          <Image
+            src="/assets/icons/arrow_down.png"
+            height={35}
+            width={63}
+            alt="arrow down"
+          />
         </div>
       </div>
     </>
