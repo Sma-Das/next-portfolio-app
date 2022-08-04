@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Layout from "../components/layout";
 import Sidebar from "../components/sidebar";
-import SidebarLayout from "../components/sidebar-layout";
 import AboutMe from "../sections/about-me";
 import Certifications from "../sections/certifications";
 import Education from "../sections/education";
