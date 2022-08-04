@@ -3,12 +3,14 @@ import GridItem from "../components/grid-item";
 
 const education = [
   {
-    heading: "BSc Computing Security",
+    heading: "Bachelor of Science in Computing Security",
     location: "Rochester Institute of Technology Dubai",
     duration: "Jan 2020 - Dec 2023",
     gridImage: "/assets/company_logos/rit-logo.jpg",
     description:
-      "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
+      "cGPA: 3.85/4\n" +
+      "Student Government Technology Coordinator\n" +
+      "Dean's List: Jan 2020 - Current",
   },
   {
     heading: "Highschool",
@@ -16,7 +18,9 @@ const education = [
     duration: "Jan 2015 - Dec 2019",
     gridImage: "/assets/company_logos/crawford.png",
     description:
-      "Responsible for the technology requirements of the Student Government; including the development and maintenance of the official website and app",
+      "Graduated with Full Honours\n" +
+      "Public Debating Team Co-Founder\n" +
+      "Chess Captain 2017-2019",
   },
 ];
 

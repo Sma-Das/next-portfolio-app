@@ -36,8 +36,8 @@ const GridItem: React.FC<GridItemProps> = ({
         <div className="col-span-4 row-span-1  text-slate-600 before:content-['@']">
           <p className="animate-underline after:bg-slate-600">{location}</p>
         </div>
-        <div className="col-span-4 row-span-2  text-slate-500">
-          <p className="md:pt-3">{description}</p>
+        <div className="col-span-4 row-span-2  text-slate-500 whitespace-pre-wrap">
+          <p>{description}</p>
         </div>
       </div>
     </>
