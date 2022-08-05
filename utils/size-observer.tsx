@@ -13,8 +13,7 @@ type SizeObserverProps = {
 };
 
 const SizeObserver: React.FC<SizeObserverProps> = ({ children }) => {
-  console.log("Rendering!");
-  const [innerWidth, setInnerWidth] = useState<number>(0);
+  const [innerWidth, setInnerWidth] = useState(0);
   const handleWidth = useCallback(() => {
     setInnerWidth(window.innerWidth);
   }, []);

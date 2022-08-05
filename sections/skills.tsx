@@ -1,9 +1,109 @@
+import Image from "next/image";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import SliderContainer, { SliderItem } from "../components/slider-container";
+import { SizeContext } from "../utils/size-observer";
+
+const SkillLogos: React.FC = () => {
+  return (
+    <>
+      <SliderItem width={150}>
+        <Image
+          src="/assets/skills/python.png"
+          width={150}
+          height={150}
+          alt="python"
+        />
+      </SliderItem>
+      <SliderItem width={150}>
+        <Image
+          src="/assets/skills/python.png"
+          width={150}
+          height={150}
+          alt="python"
+        />
+      </SliderItem>
+      <SliderItem width={150}>
+        <Image
+          src="/assets/skills/python.png"
+          width={150}
+          height={150}
+          alt="python"
+        />
+      </SliderItem>
+      <SliderItem width={150}>
+        <Image
+          src="/assets/skills/python.png"
+          width={150}
+          height={150}
+          alt="python"
+        />
+      </SliderItem>
+      <SliderItem width={150}>
+        <Image
+          src="/assets/skills/python.png"
+          width={150}
+          height={150}
+          alt="python"
+        />
+      </SliderItem>
+      <SliderItem width={150}>
+        <Image
+          src="/assets/skills/python.png"
+          width={150}
+          height={150}
+          alt="python"
+        />
+      </SliderItem>
+      <SliderItem width={150}>
+        <Image
+          src="/assets/skills/python.png"
+          width={150}
+          height={150}
+          alt="python"
+        />
+      </SliderItem>
+      <SliderItem width={150}>
+        <Image
+          src="/assets/skills/python.png"
+          width={150}
+          height={150}
+          alt="python"
+        />
+      </SliderItem>
+      <SliderItem width={150}>
+        <Image
+          src="/assets/skills/python.png"
+          width={150}
+          height={150}
+          alt="python"
+        />
+      </SliderItem>
+      <SliderItem width={150}>
+        <Image
+          src="/assets/skills/python.png"
+          width={150}
+          height={150}
+          alt="python"
+        />
+      </SliderItem>
+      <SliderItem width={150}>
+        <Image
+          src="/assets/skills/python.png"
+          width={150}
+          height={150}
+          alt="python"
+        />
+        <div>Python</div>
+      </SliderItem>
+    </>
+  );
+};
+
 const Skills: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [innerWidth, setInnerWidth] = useState<number>(0);
+  const [sectionWidth, setSectionWidth] = useState(0);
   const handleWidth = useCallback(() => {
-    setInnerWidth(sectionRef.current?.clientWidth || 0);
+    setSectionWidth(sectionRef.current?.clientWidth || 0);
   }, []);
 
   useEffect(() => {
@@ -12,15 +112,13 @@ const Skills: React.FC = () => {
     return () => window.removeEventListener("resize", handleWidth);
   }, [handleWidth]);
 
-  useEffect(() => {
-    console.log(`Section: ${innerWidth}`);
-  }, [innerWidth]);
+  const { innerWidth: maxWidth } = useContext(SizeContext);
 
   return (
     <>
       <section
         id="skills"
-        className="min-h-screen flex flex-col after:border-b-2 after:w-4/5 after:mx-[10%] after:border-gray-500 bg-slate-50 pb-10 after:pt-10"
+        className="min-h-screen flex flex-col after:border-b-2 after:w-4/5 after:mx-[10%] after:border-gray-500 bg-slate-50 pb-10 after:pt-10 items-center"
         ref={sectionRef}
       >
         <div className="text-center py-5">
@@ -28,7 +126,16 @@ const Skills: React.FC = () => {
             Skills
           </h1>
         </div>
-        <div className="flex-grow p-5">content</div>
+        <div className="flex-grow p-5">
+          <SliderContainer
+            className=""
+            containerWidth={maxWidth * 0.87}
+            contentWidth={150}
+            initialOffsetX={0}
+          >
+            <SkillLogos />
+          </SliderContainer>
+        </div>
       </section>
     </>
   );
