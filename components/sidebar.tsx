@@ -33,10 +33,7 @@ const Sidebar: React.FC = () => {
           </a>
         </div>
         <SidebarNavigation routes={routes} />
-        <section
-          about="socials"
-          className="py-10 w-full flex-shrink-0 grow bg-slate-50 "
-        >
+        <section about="socials" className="w-full flex-shrink-0 grow ">
           <div className="flex justify-evenly items-center">
             <a
               href="https://github.com/Sma-Das"

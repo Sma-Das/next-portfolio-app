@@ -31,12 +31,12 @@ const Education: React.FC = () => {
         id="education"
         className="flex flex-col after:border-b-2 after:w-4/5 after:mx-[10%] after:border-gray-500 bg-slate-50 pb-10 after:pt-10"
       >
-        <div className="text-center py-5">
+        <div className="text-center">
           <h1 className="font-bold text-3xl drop-shadow-xl xl:text-5xl">
             Education
           </h1>
         </div>
-        <div className="flex-grow xl:mr-12 p-5">
+        <div className=" xl:mx-4 p-5 ">
           <Grid>
             {education.map((position, idx) => (
               <GridItem key={idx} {...position} />

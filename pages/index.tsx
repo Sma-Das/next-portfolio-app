@@ -6,6 +6,7 @@ import AboutMe from "../sections/about-me";
 import Certifications from "../sections/certifications";
 import Education from "../sections/education";
 import Experience from "../sections/experience";
+import Footer from "../sections/footer";
 import LandingPage from "../sections/landing-page";
 import Skills from "../sections/skills";
 
@@ -49,6 +50,7 @@ const Home: NextPage = () => {
           <Skills />
         </Layout>
       </div>
+      <Footer />
     </div>
   );
 };
