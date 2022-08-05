@@ -24,6 +24,7 @@ const GridItem: React.FC<GridItemProps> = ({
           height="100%"
           alt="logo"
           className="rounded-full"
+          objectFit="scale-down"
         />
       </span>
       <div className="grid grid-cols-4 grid-rows-4 col-span-full md:col-span-7 p-3 text-xs md:text-base">

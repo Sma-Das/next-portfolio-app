@@ -1,3 +1,59 @@
+import Grid from "../components/grid";
+import GridItem from "../components/grid-item";
+
+const certifcations = [
+  {
+    heading: "CompTIA Security+",
+    location: "CompTIA",
+    duration: "In Progress",
+    gridImage: "/assets/certifications/security.png",
+    description:
+      "Validate baseline security skills and for fulfilling the DoD 8570 compliance.\n" +
+      "The only baseline cybersecurity certification emphasizing hands-on practical skills, ensuring the security professional is better prepared to problem solve a wider variety of today's complex issues.\n" +
+      "Aligned to the latest trends and techniques.",
+  },
+  {
+    heading: "CompTIA Network+",
+    location: "CompTIA",
+    duration: "In Progress",
+    gridImage: "/assets/certifications/network_plus.png",
+    description:
+      "Validate baseline security skills and for fulfilling the DoD 8570 compliance.\n" +
+      "The only baseline cybersecurity certification emphasizing hands-on practical skills, ensuring the security professional is better prepared to problem solve a wider variety of today's complex issues.\n" +
+      "Aligned to the latest trends and techniques.",
+  },
+  {
+    heading: "Practical Network Penetration Tester",
+    location: "TCM Security",
+    duration: "December 2021",
+    gridImage: "/assets/certifications/tcm_security.png",
+    description:
+      "Validate baseline security skills and for fulfilling the DoD 8570 compliance.\n" +
+      "The only baseline cybersecurity certification emphasizing hands-on practical skills, ensuring the security professional is better prepared to problem solve a wider variety of today's complex issues.\n" +
+      "Aligned to the latest trends and techniques.",
+  },
+  {
+    heading: "CS50",
+    location: "Harvard University",
+    duration: "June 2021",
+    gridImage: "/assets/certifications/cs50.png",
+    description:
+      "Validate baseline security skills and for fulfilling the DoD 8570 compliance.\n" +
+      "The only baseline cybersecurity certification emphasizing hands-on practical skills, ensuring the security professional is better prepared to problem solve a wider variety of today's complex issues.\n" +
+      "Aligned to the latest trends and techniques.",
+  },
+  {
+    heading: "Introduction to Machine Learning",
+    location: "Stanford University",
+    duration: "Jan 2021",
+    gridImage: "/assets/certifications/stanford.png",
+    description:
+      "Validate baseline security skills and for fulfilling the DoD 8570 compliance.\n" +
+      "The only baseline cybersecurity certification emphasizing hands-on practical skills, ensuring the security professional is better prepared to problem solve a wider variety of today's complex issues.\n" +
+      "Aligned to the latest trends and techniques.",
+  },
+];
+
 const Certifications: React.FC = () => {
   return (
     <>
@@ -10,7 +66,13 @@ const Certifications: React.FC = () => {
             Certifications
           </h1>
         </div>
-        <div className="flex-grow p-5">content</div>
+        <div className="xl:mx-4 p-5">
+          <Grid>
+            {certifcations.map((certification, idx) => (
+              <GridItem key={idx} {...certification} />
+            ))}
+          </Grid>
+        </div>
       </section>
     </>
   );

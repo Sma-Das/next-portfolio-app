@@ -36,7 +36,7 @@ const Education: React.FC = () => {
             Education
           </h1>
         </div>
-        <div className=" xl:mx-4 p-5 ">
+        <div className="xl:mx-4 p-5 ">
           <Grid>
             {education.map((position, idx) => (
               <GridItem key={idx} {...position} />
