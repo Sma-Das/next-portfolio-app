@@ -1,103 +1,6 @@
 import Image from "next/image";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import SliderContainer, { SliderItem } from "../components/slider-container";
-import { SizeContext } from "../utils/size-observer";
-
-const SkillLogos: React.FC = () => {
-  return (
-    <>
-      <SliderItem width={150}>
-        <Image
-          src="/assets/skills/python.png"
-          width={150}
-          height={150}
-          alt="python"
-        />
-      </SliderItem>
-      <SliderItem width={150}>
-        <Image
-          src="/assets/skills/python.png"
-          width={150}
-          height={150}
-          alt="python"
-        />
-      </SliderItem>
-      <SliderItem width={150}>
-        <Image
-          src="/assets/skills/python.png"
-          width={150}
-          height={150}
-          alt="python"
-        />
-      </SliderItem>
-      <SliderItem width={150}>
-        <Image
-          src="/assets/skills/python.png"
-          width={150}
-          height={150}
-          alt="python"
-        />
-      </SliderItem>
-      <SliderItem width={150}>
-        <Image
-          src="/assets/skills/python.png"
-          width={150}
-          height={150}
-          alt="python"
-        />
-      </SliderItem>
-      <SliderItem width={150}>
-        <Image
-          src="/assets/skills/python.png"
-          width={150}
-          height={150}
-          alt="python"
-        />
-      </SliderItem>
-      <SliderItem width={150}>
-        <Image
-          src="/assets/skills/python.png"
-          width={150}
-          height={150}
-          alt="python"
-        />
-      </SliderItem>
-      <SliderItem width={150}>
-        <Image
-          src="/assets/skills/python.png"
-          width={150}
-          height={150}
-          alt="python"
-        />
-      </SliderItem>
-      <SliderItem width={150}>
-        <Image
-          src="/assets/skills/python.png"
-          width={150}
-          height={150}
-          alt="python"
-        />
-      </SliderItem>
-      <SliderItem width={150}>
-        <Image
-          src="/assets/skills/python.png"
-          width={150}
-          height={150}
-          alt="python"
-        />
-      </SliderItem>
-      <SliderItem width={150}>
-        <Image
-          src="/assets/skills/python.png"
-          width={150}
-          height={150}
-          alt="python"
-        />
-        <div>Python</div>
-      </SliderItem>
-    </>
-  );
-};
 
 const Skills: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -112,8 +15,6 @@ const Skills: React.FC = () => {
     return () => window.removeEventListener("resize", handleWidth);
   }, [handleWidth]);
 
-  const { innerWidth: maxWidth } = useContext(SizeContext);
-
   return (
     <>
       <section
@@ -126,14 +27,80 @@ const Skills: React.FC = () => {
             Skills
           </h1>
         </div>
-        <div className="flex-grow p-5">
-          <SliderContainer
-            className=""
-            containerWidth={maxWidth * 0.87}
-            contentWidth={150}
-            initialOffsetX={0}
-          >
-            <SkillLogos />
+        <div className="flex-grow p-5 overflow-x-hidden">
+          <SliderContainer containerWidth={sectionWidth} initialOffsetX={0}>
+            <SliderItem width={150}>
+              <Image
+                src="/assets/skills/python.png"
+                width={150}
+                height={150}
+                alt="python"
+              />
+            </SliderItem>
+            <SliderItem width={150}>
+              <Image
+                src="/assets/skills/python.png"
+                width={150}
+                height={150}
+                alt="python"
+              />
+            </SliderItem>
+            <SliderItem width={150}>
+              <Image
+                src="/assets/skills/python.png"
+                width={150}
+                height={150}
+                alt="python"
+              />
+            </SliderItem>
+            <SliderItem width={150}>
+              <Image
+                src="/assets/skills/python.png"
+                width={150}
+                height={150}
+                alt="python"
+              />
+            </SliderItem>
+            <SliderItem width={150}>
+              <Image
+                src="/assets/skills/python.png"
+                width={150}
+                height={150}
+                alt="python"
+              />
+            </SliderItem>
+            <SliderItem width={150}>
+              <Image
+                src="/assets/skills/python.png"
+                width={150}
+                height={150}
+                alt="python"
+              />
+            </SliderItem>
+            <SliderItem width={150}>
+              <Image
+                src="/assets/skills/python.png"
+                width={150}
+                height={150}
+                alt="python"
+              />
+            </SliderItem>
+            <SliderItem width={150}>
+              <Image
+                src="/assets/skills/python.png"
+                width={150}
+                height={150}
+                alt="python"
+              />
+            </SliderItem>
+            <SliderItem width={150}>
+              <Image
+                src="/assets/skills/python.png"
+                width={150}
+                height={150}
+                alt="python"
+              />
+            </SliderItem>
           </SliderContainer>
         </div>
       </section>
