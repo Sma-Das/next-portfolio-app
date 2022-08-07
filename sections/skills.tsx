@@ -15,12 +15,12 @@ const SkillsList: { [heading: string]: Array<SkillItem> } = {
       width: "100%",
     },
     {
-      imageSrc: "C.png",
+      imageSrc: "c.png",
       alt: "C/C++",
       width: "100%",
     },
     {
-      imageSrc: "Java.png",
+      imageSrc: "java.png",
       alt: "Java",
       width: "100%",
     },
