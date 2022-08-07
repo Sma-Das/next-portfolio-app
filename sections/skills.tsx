@@ -6,98 +6,140 @@ type SkillItem = {
   width: string;
 };
 
-const SkillItems: Array<SkillItem> = [
-  {
-    imageSrc: "python.png",
-    alt: "Python",
-    width: "100%",
-  },
-  {
-    imageSrc: "typescript.png",
-    alt: "Typescript",
-    width: "100%",
-  },
-  {
-    imageSrc: "javascript.png",
-    alt: "Javascript",
-    width: "100%",
-  },
-  {
-    imageSrc: "bash.png",
-    alt: "Bash",
-    width: "100%",
-  },
-  {
-    imageSrc: "html.png",
-    alt: "HTML",
-    width: "100%",
-  },
-  {
-    imageSrc: "windows.png",
-    alt: "Windows",
-    width: "100%",
-  },
-  {
-    imageSrc: "powershell.jpg",
-    alt: "Powershell",
-    width: "100%",
-  },
-  {
-    imageSrc: "css.png",
-    alt: "CSS",
-    width: "100%",
-  },
-  {
-    imageSrc: "tailwind.png",
-    alt: "Tailwind",
-    width: "100%",
-  },
-  {
-    imageSrc: "react.png",
-    alt: "ReactJS",
-    width: "115%",
-  },
-  {
-    imageSrc: "sass.png",
-    alt: "ReactJS",
-    width: "100%",
-  },
-  {
-    imageSrc: "angular.png",
-    alt: "Angular",
-    width: "100%",
-  },
-  {
-    imageSrc: "linux.png",
-    alt: "Linux",
-    width: "84%",
-  },
-  {
-    imageSrc: "lambda.png",
-    alt: "AWS Lambda",
-    width: "100%",
-  },
-  {
-    imageSrc: "nextjs.png",
-    alt: "NextJS",
-    width: "100%",
-  },
-  {
-    imageSrc: "firebase.jpg",
-    alt: "Firebase",
-    width: "100%",
-  },
-  {
-    imageSrc: "s3.png",
-    alt: "AWS S3",
-    width: "100%",
-  },
-  {
-    imageSrc: "gcloud.png",
-    alt: "Google Cloud",
-    width: "100%",
-  },
-];
+const SkillsList: { [heading: string]: Array<SkillItem> } = {
+  "Programming Languages": [
+    {
+      imageSrc: "python.png",
+      alt: "Python",
+      width: "100%",
+    },
+    {
+      imageSrc: "C.png",
+      alt: "C/C++",
+      width: "100%",
+    },
+    {
+      imageSrc: "Java.png",
+      alt: "Java",
+      width: "100%",
+    },
+    {
+      imageSrc: "javascript.png",
+      alt: "Javascript",
+      width: "100%",
+    },
+    {
+      imageSrc: "typescript.png",
+      alt: "Typescript",
+      width: "100%",
+    },
+    {
+      imageSrc: "nasm.png",
+      alt: "Assembly",
+      width: "100%",
+    },
+  ],
+  "Cloud Technologies": [
+    {
+      imageSrc: "aws.png",
+      alt: "AWS Cloud",
+      width: "100%",
+    },
+    {
+      imageSrc: "s3.png",
+      alt: "S3 Buckets",
+      width: "100%",
+    },
+    {
+      imageSrc: "dynamodb.png",
+      alt: "DynamoDB",
+      width: "100%",
+    },
+    {
+      imageSrc: "lambda.png",
+      alt: "Lambda",
+      width: "100%",
+    },
+    {
+      imageSrc: "gcloud.png",
+      alt: "Google Cloud",
+      width: "100%",
+    },
+  ],
+  Frameworks: [
+    {
+      imageSrc: "react.png",
+      alt: "ReactJS",
+      width: "115%",
+    },
+    {
+      imageSrc: "angular.png",
+      alt: "Angular",
+      width: "100%",
+    },
+    {
+      imageSrc: "tailwind.png",
+      alt: "Tailwind",
+      width: "100%",
+    },
+    {
+      imageSrc: "sass.png",
+      alt: "SCSS",
+      width: "100%",
+    },
+    {
+      imageSrc: "nextjs.png",
+      alt: "NextJS",
+      width: "100%",
+    },
+  ],
+  "Scripting Languages": [
+    {
+      imageSrc: "bash.png",
+      alt: "Bash",
+      width: "100%",
+    },
+    {
+      imageSrc: "powershell.jpg",
+      alt: "Powershell",
+      width: "100%",
+    },
+  ],
+  // "Markup Languages": [
+  //   {
+  //     imageSrc: "html.png",
+  //     alt: "HTML",
+  //     width: "100%",
+  //   },
+  //   {
+  //     imageSrc: "css.png",
+  //     alt: "CSS",
+  //     width: "100%",
+  //   },
+  //   {
+  //     imageSrc: "markdown.png",
+  //     alt: "Markdown",
+  //     width: "100%",
+  //   },
+  //   {
+  //     imageSrc: "latex.png",
+  //     alt: "LaTeX",
+  //     width: "100%",
+  //   },
+  // ],
+  "Database Technologies": [
+    {
+      imageSrc: "mongodb.webp",
+      alt: "MongoDB",
+      width: "100%",
+    },
+    {
+      imageSrc: "mysql.png",
+      alt: "MySQL",
+      width: "100%",
+    },
+  ],
+};
 
 const skillImageBase = "/assets/skills";
 
@@ -113,24 +155,36 @@ const Skills: React.FC = () => {
             Skills
           </h1>
         </div>
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-5 p-5 items-center justify-center text-center">
-          {SkillItems.map(({ imageSrc, alt, width }, idx) => (
+        {Object.entries(SkillsList).map(([heading, skillItems], idx) => {
+          return (
             <>
-              <div className="w-full group relative pt-3" key={idx}>
-                <div className="hidden group-hover:block absolute left-0 right-0 mx-auto z-10 bottom-0 translate-y-7 bg-gradient-to-r from-slate-100 to-slate-300 shadow-sm h-6 rounded-md text-center pt-1 ">
-                  {alt}
-                </div>
-                <Image
-                  src={`${skillImageBase}/${imageSrc}`}
-                  width={width}
-                  height="100%"
-                  alt={alt}
-                  title={alt}
-                />
+              <h2 key={idx} className="text-center text-3xl my-2">
+                <span className="drop-shadow-xl">{heading}</span>
+              </h2>
+              <div className="grid grid-cols-3 md:grid-flow-col md:grid-cols-none gap-5 p-5  text-center justify-center mx-auto">
+                {skillItems.map(({ imageSrc, alt, width }, idx) => (
+                  <>
+                    <div
+                      className="w-full group relative pt-3 scale-90 xl:scale-95 hover:scale-105 xl:hover:scale-100"
+                      key={idx}
+                    >
+                      <div className="hidden group-hover:block absolute left-0 right-0 mx-auto z-10 bottom-0 translate-y-7 bg-white shadow-xl pb-1 rounded-md text-center pt-1 border">
+                        {alt}
+                      </div>
+                      <Image
+                        src={`${skillImageBase}/${imageSrc}`}
+                        width={width}
+                        height="100%"
+                        alt={alt}
+                        title={alt}
+                      />
+                    </div>
+                  </>
+                ))}
               </div>
             </>
-          ))}
-        </div>
+          );
+        })}
       </section>
     </>
   );
