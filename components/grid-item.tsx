@@ -29,13 +29,19 @@ const GridItem: React.FC<GridItemProps> = ({
       </span>
       <div className="grid grid-cols-4 grid-rows-4 col-span-full md:col-span-7 p-3 text-xs md:text-base">
         <div className="col-span-2 row-span-1 font-bold ">
-          <p className="animate-underline after:bg-black">{heading}</p>
+          <p className="animate-underline after:origin-bottom-right hover:after:origin-bottom-left after:bg-black">
+            {heading}
+          </p>
         </div>
-        <div className="col-span-2 row-span-1 text-right font-bold md:pr-3">
-          <p className="animate-underline after:bg-black">{duration}</p>
+        <div className="col-span-2 row-span-1 text-right font-bold md:pr-3 ">
+          <p className="animate-underline after:bg-black after:origin-bottom-right hover:after:origin-bottom-left">
+            {duration}
+          </p>
         </div>
         <div className="col-span-4 row-span-1  text-slate-600 before:content-['@']">
-          <p className="animate-underline after:bg-slate-600">{location}</p>
+          <p className="animate-underline after:bg-slate-400 after:origin-bottom-right hover:after:origin-bottom-left">
+            {location}
+          </p>
         </div>
         <div className="col-span-4 row-span-2  text-slate-500 whitespace-pre-wrap">
           <p>{description}</p>
