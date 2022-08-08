@@ -43,7 +43,7 @@ const SkillsList: { [heading: string]: Array<SkillItem> } = {
   "Cloud Technologies": [
     {
       imageSrc: "aws.png",
-      alt: "AWS Cloud",
+      alt: "AWS",
       width: "100%",
     },
     {
@@ -146,6 +146,11 @@ const skillImageBase = "/assets/skills";
 
 const Skills: React.FC = () => {
   const [active, setActive] = useState<string>("Programming Languages");
+  const handleActive = (heading: string) => {
+    if (heading !== active) {
+      setActive(heading);
+    }
+  };
 
   return (
     <>
@@ -161,7 +166,7 @@ const Skills: React.FC = () => {
         {Object.entries(SkillsList).map(([heading, skillItems], idx) => (
           <React.Fragment key={idx}>
             <h2 key={idx} className="text-center text-xl md:text-3xl my-2">
-              <span onClick={() => setActive(heading)} className="">
+              <span onClick={() => handleActive(heading)} className="">
                 {heading}
                 <span className="m-2 md:m-5">
                   <Image
@@ -169,32 +174,40 @@ const Skills: React.FC = () => {
                     height="15px"
                     width="15px"
                     alt="logo"
-                    className={`transition ${
+                    className={`transition duration-1000 ${
                       active === heading ? "rotate-180" : "rotate-0"
                     }`}
                   />
                 </span>
               </span>
             </h2>
-            <div className=" grid grid-cols-3 md:grid-flow-col md:grid-cols-none gap-5 p-5  text-center justify-center mx-auto">
+            <div
+              className={
+                "grid grid-cols-3 md:grid-flow-col md:grid-cols-none gap-5 p-5  justify-center mx-auto" +
+                `transition-all duration-1000  ${
+                  active !== heading ? "opacity-0" : "opacity-100"
+                }`
+              }
+            >
               {skillItems.map(({ imageSrc, alt, width }, id) => (
                 <React.Fragment key={id}>
                   <div
-                    className={`w-full group relative pt-3 scale-90 xl:scale-95 hover:scale-105 xl:hover:scale-100 ${
+                    className={`transition-all duration-300 w-full group relative pt-3 scale-90 xl:scale-95 hover:scale-105 xl:hover:scale-100 ${
                       active === heading ? "" : "hidden"
                     }`}
-                    key={imageSrc}
                   >
-                    <div className="hidden group-hover:block absolute left-0 right-0 mx-auto z-10 bottom-0 translate-y-7 bg-white shadow-xl pb-1 rounded-md text-center pt-1 border">
+                    <div className="hidden group-hover:block absolute left-0 right-0 mx-auto z-10 bottom-0 translate-y-7 bg-white shadow-xl p-1 rounded-md text-center border">
                       {alt}
                     </div>
-                    <Image
-                      src={`${skillImageBase}/${imageSrc}`}
-                      width={width}
-                      height="100%"
-                      alt={alt}
-                      title={alt}
-                    />
+                    <div>
+                      <Image
+                        src={`${skillImageBase}/${imageSrc}`}
+                        width={width}
+                        height="100%"
+                        alt={alt}
+                        title={alt}
+                      />
+                    </div>
                   </div>
                 </React.Fragment>
               ))}
