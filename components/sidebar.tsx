@@ -59,7 +59,12 @@ const Sidebar: React.FC = () => {
                 className="hover:text-gray-700 w-full h-full"
               />
             </a>
-            <a href="/assets/files/Sma_Das_CV_2022.docx" className="w-7 h-7">
+            <a
+              href="https://docs.google.com/document/d/1jUCSyAGTy1O1_sw3cd2fgcKfp4Ov6Nxfya_uRUp-818"
+              target="_blank"
+              rel="noreferrer"
+              className="w-7 h-7"
+            >
               <FontAwesomeIcon
                 icon={faGoogleDrive}
                 color="#000"
