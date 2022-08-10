@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Layout from "../components/layout";
-import Sidebar from "../components/sidebar";
 import AboutMe from "../sections/about-me";
 import Certifications from "../sections/certifications";
 import Education from "../sections/education";
 import Experience from "../sections/experience";
 import Footer from "../sections/footer";
 import LandingPage from "../sections/landing-page";
+import Sidebar from "../sections/sidebar";
 import Skills from "../sections/skills";
 
 const Home: NextPage = () => {
