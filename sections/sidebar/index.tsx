@@ -1,20 +1,50 @@
-import Image from "next/image";
-import SidebarNavigation from "./navigation";
-import SidebarSocials from "./socials";
+import {
+  faGithub,
+  faGoogleDrive,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons";
+import SidebarNavigation, { Route } from "./navigation";
+import ProfilePicture from "./picture";
+import SidebarSocials, { Social } from "./socials";
 
-const ProfilePicture: React.FC = () => {
-  return (
-    <>
-      <Image
-        src="/assets/sma_das.jpg"
-        layout="fill"
-        alt="Sma Das"
-        className="rounded-r-full hover:rounded-l-full hover:rounded-none transition-all duration-1000 "
-      />
-    </>
-  );
-};
+const routes: Array<Route> = [
+  {
+    displayText: "About Me",
+    route: "#about-me",
+  },
+  {
+    displayText: "Experience",
+    route: "#experience",
+  },
+  {
+    displayText: "Education",
+    route: "#education",
+  },
+  {
+    displayText: "Certifications",
+    route: "#certifications",
+  },
+  {
+    displayText: "Skills",
+    route: "#skills",
+  },
+];
 
+const socials: Array<Social> = [
+  {
+    linkTo: "https://www.linkedin.com/in/sma-das/",
+    icon: faLinkedinIn,
+  },
+  {
+    linkTo: "https://github.com/Sma-Das",
+    icon: faGithub,
+  },
+  {
+    linkTo:
+      "https://docs.google.com/document/d/1jUCSyAGTy1O1_sw3cd2fgcKfp4Ov6Nxfya_uRUp-818",
+    icon: faGoogleDrive,
+  },
+];
 const SideBar: React.FC = () => {
   return (
     <>
@@ -22,9 +52,9 @@ const SideBar: React.FC = () => {
         <div className="flex-shrink-0 relative p-3 mt-3 w-11/12 aspect-square">
           <ProfilePicture />
         </div>
-        <SidebarNavigation />
+        <SidebarNavigation routes={routes} />
         <div className="bg-slate-200 w-full flex-shrink-0 rounded-r-full">
-          <SidebarSocials />
+          <SidebarSocials socials={socials} />
         </div>
       </div>
     </>

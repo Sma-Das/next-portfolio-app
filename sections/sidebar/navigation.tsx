@@ -1,5 +1,5 @@
 import { useCallback, useContext, useEffect, useState } from "react";
-import { OffsetContext, OffsetValues } from "../../utils/offset-observer";
+import { OffsetContext } from "../../utils/offset-observer";
 import { ScrollContext } from "../../utils/scroll-observer";
 
 export type Route = {
@@ -8,75 +8,50 @@ export type Route = {
 };
 
 type NavigationProps = {
-  routes?: Array<Route>;
+  routes: Array<Route>;
 };
 
-const defaultRoutes: Array<Route> = [
-  {
-    displayText: "About Me",
-    route: "#about-me",
-  },
-  {
-    displayText: "Experience",
-    route: "#experience",
-  },
-  {
-    displayText: "Education",
-    route: "#education",
-  },
-  {
-    displayText: "Certifications",
-    route: "#certifications",
-  },
-  {
-    displayText: "Skills",
-    route: "#skills",
-  },
-];
-
-const SidebarNavigation: React.FC<NavigationProps> = ({
-  routes = defaultRoutes,
-}) => {
-  const offsetValues = useContext(OffsetContext);
+const SidebarNavigation: React.FC<NavigationProps> = ({ routes }) => {
+  const sectionOffsetValues = useContext(OffsetContext);
   const { scrollY } = useContext(ScrollContext);
+  const [activeRoute, setActiveRoute] = useState<string>("about-me");
 
-  const [activeSection, setActiveSection] = useState<string>("about-me");
-
-  const handleActive = useCallback(() => {
-    const activeSection = findActiveSection(offsetValues, scrollY);
-    if (activeSection) {
-      setActiveSection(activeSection[0]);
-    }
-  }, [offsetValues, scrollY]);
-
-  const isActive = useCallback(
-    (sectionId: string) => {
-      return sectionId === `#${activeSection}`;
-    },
-    [activeSection]
-  );
-
-  const findActiveSection = (offsetValues: OffsetValues, scrollY: number) => {
-    const halfScreen = window.innerHeight * 0.5;
-    return Object.entries(offsetValues).find(([, sectionOffset]) => {
-      return (
-        scrollY >= sectionOffset - halfScreen &&
-        scrollY <= sectionOffset + halfScreen
-      );
-    });
+  const isActive = (route: string) => {
+    return route === `#${activeRoute}`;
   };
 
+  const handleActiveRoute = useCallback(
+    (route?: string) => {
+      if (route) {
+        setActiveRoute(route);
+      } else {
+        const halfScreen = window.innerHeight / 2;
+        sectionOffsetValues.forEach((offsetValue, sectionId) => {
+          if (
+            scrollY >= offsetValue - halfScreen &&
+            scrollY <= offsetValue + halfScreen
+          ) {
+            setActiveRoute(sectionId);
+          }
+        });
+      }
+    },
+    [scrollY, sectionOffsetValues]
+  );
+
   useEffect(() => {
-    handleActive();
-  }, [handleActive]);
+    handleActiveRoute();
+  }, [handleActiveRoute, scrollY]);
+
   return (
     <>
       <nav className="flex flex-col grow justify-center items-center w-full">
         {routes.map(({ displayText, route }, idx) => (
           <a
-            className=" w-full h-full text-center hover:rounded-r-full group relative"
+            className="w-full h-full text-center hover:rounded-r-full group relative"
             href={route}
             key={idx}
+            onClick={() => handleActiveRoute(route)}
           >
             <div
               className={`transition-all duration-1000  bg-slate-300 absolute w-[95%] h-full rounded-r-full -translate-x-full group-hover:translate-x-0 ${

@@ -2,39 +2,37 @@ import React, { useCallback, useContext, useEffect, useState } from "react";
 import { ObserverProps } from "./parent-observer";
 import { SizeContext } from "./size-observer";
 
-export type OffsetValues = { [key: string]: number };
+export type SectionOffset = Map<string, number>;
 
-const sections: OffsetValues = {
-  "about-me": Infinity,
-  experience: Infinity,
-  education: Infinity,
-  certifications: Infinity,
-  skills: Infinity,
-};
+const sections = new Map<string, number>([
+  ["about-me", Infinity],
+  ["experience", Infinity],
+  ["education", Infinity],
+  ["certifications", Infinity],
+  ["skills", Infinity],
+]);
 
-export const OffsetContext = React.createContext<OffsetValues>(sections);
+export const OffsetContext = React.createContext<SectionOffset>(sections);
 
 const OffsetObserver: React.FC<ObserverProps> = ({ children }) => {
-  const [offsetValues, setOffsetValues] = useState<OffsetValues>({});
+  const [offsetValues, setOffsetValues] = useState<SectionOffset>();
   const { innerWidth } = useContext(SizeContext);
-  const handleOffset = useCallback((newOffsetValues: OffsetValues) => {
+  const handleOffset = useCallback((newOffsetValues: SectionOffset) => {
     setOffsetValues(() => newOffsetValues);
   }, []);
 
   useEffect(() => {
-    let newOffsetValues = sections;
-    Object.keys(newOffsetValues).forEach((sectionId) => {
-      const sectionRef = document.getElementById(sectionId);
-      newOffsetValues[sectionId] =
-        sectionRef?.offsetTop ?? newOffsetValues[sectionId];
+    sections.forEach((_offsetValue, sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        sections.set(sectionId, element.offsetTop);
+      }
     });
-    handleOffset(newOffsetValues);
+    handleOffset(sections);
   }, [handleOffset, innerWidth]);
 
   return (
-    <OffsetContext.Provider value={offsetValues}>
-      {children}
-    </OffsetContext.Provider>
+    <OffsetContext.Provider value={sections}>{children}</OffsetContext.Provider>
   );
 };
 

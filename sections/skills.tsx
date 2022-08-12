@@ -106,28 +106,6 @@ const SkillsList: { [heading: string]: Array<SkillItem> } = {
       width: "100%",
     },
   ],
-  // "Markup Languages": [
-  //   {
-  //     imageSrc: "html.png",
-  //     alt: "HTML",
-  //     width: "100%",
-  //   },
-  //   {
-  //     imageSrc: "css.png",
-  //     alt: "CSS",
-  //     width: "100%",
-  //   },
-  //   {
-  //     imageSrc: "markdown.png",
-  //     alt: "Markdown",
-  //     width: "100%",
-  //   },
-  //   {
-  //     imageSrc: "latex.png",
-  //     alt: "LaTeX",
-  //     width: "100%",
-  //   },
-  // ],
   "Database Technologies": [
     {
       imageSrc: "mongodb.webp",
@@ -206,6 +184,7 @@ const Skills: React.FC = () => {
                         height="100%"
                         alt={alt}
                         title={alt}
+                        placeholder="empty"
                       />
                     </div>
                   </div>
