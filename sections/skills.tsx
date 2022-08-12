@@ -123,10 +123,12 @@ const SkillsList: { [heading: string]: Array<SkillItem> } = {
 const skillImageBase = "/assets/skills";
 
 const Skills: React.FC = () => {
-  const [active, setActive] = useState<string>("Programming Languages");
+  const [activeHeading, setActiveHeading] = useState<string>(
+    "Programming Languages"
+  );
   const handleActive = (heading: string) => {
-    if (heading !== active) {
-      setActive(heading);
+    if (heading !== activeHeading) {
+      setActiveHeading(heading);
     }
   };
 
@@ -153,7 +155,7 @@ const Skills: React.FC = () => {
                     width="15px"
                     alt="logo"
                     className={`transition duration-1000 ${
-                      active === heading ? "rotate-180" : "rotate-0"
+                      activeHeading === heading ? "rotate-180" : "rotate-0"
                     }`}
                   />
                 </span>
@@ -163,7 +165,7 @@ const Skills: React.FC = () => {
               className={
                 "grid grid-cols-3 md:grid-flow-col md:grid-cols-none gap-5 p-5  justify-center mx-auto" +
                 `transition-all duration-1000  ${
-                  active !== heading ? "opacity-0" : "opacity-100"
+                  activeHeading !== heading ? "opacity-0" : "opacity-100"
                 }`
               }
             >
@@ -171,7 +173,7 @@ const Skills: React.FC = () => {
                 <React.Fragment key={id}>
                   <div
                     className={`transition-all duration-300 w-full group relative pt-3 scale-90 xl:scale-95 hover:scale-105 xl:hover:scale-100 ${
-                      active === heading ? "" : "hidden"
+                      activeHeading === heading ? "" : "hidden"
                     }`}
                   >
                     <div className="hidden group-hover:block absolute left-0 right-0 mx-auto z-10 bottom-0 translate-y-7 bg-white shadow-xl p-1 rounded-md text-center border">
