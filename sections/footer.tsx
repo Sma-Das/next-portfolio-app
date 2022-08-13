@@ -1,9 +1,11 @@
 import Image from "next/image";
 
+const currYear = new Date().getFullYear();
+
 const Footer: React.FC = () => {
   return (
     <>
-      <footer className="grid grid-cols-10 grid-rows-2 bg-black h-[3%] w-full text-white justify-items-center pt-3 text-xs xl:text-base px-1">
+      <footer className="grid grid-cols-10 grid-rows-3 bg-black h-[3%] w-full text-white justify-items-center pt-3 text-xs xl:text-base px-1">
         <div className="col-span-2 hidden md:block"></div>
         <div className="col-span-full md:col-span-6 text-base fill-white">
           <p>
@@ -59,7 +61,15 @@ const Footer: React.FC = () => {
           </a>
         </div>
         <div className="col-span-2 hidden md:block">
-          &copy; Sma Das {new Date().getFullYear()}
+          &copy; Sma Das {currYear}
+        </div>
+        <div className="col-span-10 inline-flex text-base p-1 font-medium">
+          <a
+            href="https://github.com/Sma-Das/next-portfolio-app"
+            className="hover:animate-pulse"
+          >
+            Source Code
+          </a>
         </div>
       </footer>
     </>
