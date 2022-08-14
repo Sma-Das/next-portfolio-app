@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { OffsetContext } from "../../utils/offset-observer";
 import { ScrollContext } from "../../utils/scroll-observer";
 
@@ -14,20 +14,26 @@ type NavigationProps = {
 const SidebarNavigation: React.FC<NavigationProps> = ({ routes }) => {
   const sectionOffsetValues = useContext(OffsetContext);
   const { scrollY } = useContext(ScrollContext);
+  const navRef = useRef<HTMLElement>(null);
 
   const isActive = (route: string) => {
-    const halfScreen = window.innerHeight / 2;
-    const sectionOffset = sectionOffsetValues.get(route.substring(1));
-    return (
-      sectionOffset && // Check the offset exists
-      scrollY >= sectionOffset - halfScreen && // Check the scroll is in the middle of the screen
-      scrollY <= sectionOffset + halfScreen
-    );
+    if (navRef.current) {
+      const halfScreen = window.innerHeight / 2;
+      const sectionOffset = sectionOffsetValues.get(route.substring(1));
+      return (
+        sectionOffset && // Check the offset exists
+        scrollY >= sectionOffset - halfScreen && // Check the scroll is in the middle of the screen
+        scrollY <= sectionOffset + halfScreen
+      );
+    }
   };
 
   return (
     <>
-      <nav className="flex flex-col grow justify-center items-center w-full">
+      <nav
+        ref={navRef}
+        className="flex flex-col grow justify-center items-center w-full"
+      >
         {routes.map(({ displayText, route }, idx) => (
           <a
             className="w-full h-full text-center hover:rounded-r-full group relative"
