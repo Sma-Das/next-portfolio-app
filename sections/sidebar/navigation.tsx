@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { OffsetContext } from "../../utils/offset-observer";
 import { ScrollContext } from "../../utils/scroll-observer";
 
@@ -14,34 +14,16 @@ type NavigationProps = {
 const SidebarNavigation: React.FC<NavigationProps> = ({ routes }) => {
   const sectionOffsetValues = useContext(OffsetContext);
   const { scrollY } = useContext(ScrollContext);
-  const [activeRoute, setActiveRoute] = useState<string>("about-me");
 
   const isActive = (route: string) => {
-    return route === `#${activeRoute}`;
+    const halfScreen = window.innerHeight / 2;
+    const sectionOffset = sectionOffsetValues.get(route.substring(1));
+    return (
+      sectionOffset && // Check the offset exists
+      scrollY >= sectionOffset - halfScreen && // Check the scroll is in the middle of the screen
+      scrollY <= sectionOffset + halfScreen
+    );
   };
-
-  const handleActiveRoute = useCallback(
-    (route?: string) => {
-      if (route) {
-        setActiveRoute(route);
-      } else {
-        const halfScreen = window.innerHeight / 2;
-        sectionOffsetValues.forEach((offsetValue, sectionId) => {
-          if (
-            scrollY >= offsetValue - halfScreen &&
-            scrollY <= offsetValue + halfScreen
-          ) {
-            setActiveRoute(sectionId);
-          }
-        });
-      }
-    },
-    [scrollY, sectionOffsetValues]
-  );
-
-  useEffect(() => {
-    handleActiveRoute();
-  }, [handleActiveRoute, scrollY]);
 
   return (
     <>
@@ -51,7 +33,6 @@ const SidebarNavigation: React.FC<NavigationProps> = ({ routes }) => {
             className="w-full h-full text-center hover:rounded-r-full group relative"
             href={route}
             key={idx}
-            onClick={() => handleActiveRoute(route)}
           >
             <div
               className={`transition-all duration-1000  bg-slate-300 absolute w-[95%] h-full rounded-r-full -translate-x-full group-hover:translate-x-0 ${
