@@ -8,7 +8,7 @@ const education = [
     duration: "Jan 2020 - Dec 2023",
     gridImage: "/assets/company_logos/rit-logo.jpg",
     description:
-      "cGPA: 3.85/4\n" +
+      "cGPA: 3.9/4\n" +
       "Student Government Technology Coordinator\n" +
       "Dean's List: Jan 2020 - Current",
   },

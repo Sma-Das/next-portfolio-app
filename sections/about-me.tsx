@@ -43,7 +43,7 @@ const AboutMe: React.FC = () => {
             </ul>
           </div>
           <div className="leading-loose py-5 md:py-3">
-            My current academic standing rests at a cGPA of 3.84/4 with my
+            My current academic standing rests at a cGPA of 3.9/4 with my
             previous two semesters yielding a GPA of 3.91/4 and 4/4
           </div>
         </div>
