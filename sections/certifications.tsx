@@ -15,7 +15,7 @@ const certifcations = [
   {
     heading: "CompTIA Network+",
     location: "CompTIA",
-    duration: "In Progress",
+    duration: "July 2022",
     gridImage: "/assets/certifications/network_plus.png",
     description:
       "The CompTIA Network+ validates the technical skills needed to securely establish, maintain and troubleshoot the essential networks that businesses rely on.\n" +
