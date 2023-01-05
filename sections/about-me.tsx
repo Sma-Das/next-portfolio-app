@@ -1,3 +1,10 @@
+import ordinal from "ordinal";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import ProgressProvider from "../components/progress-provider";
+
+const currentYear = new Date().getFullYear() - 2020; // Start year
+
 const AboutMe: React.FC = () => {
   return (
     <>
@@ -14,37 +21,95 @@ const AboutMe: React.FC = () => {
             <span className="animate-wave absolute origin-[80%_80%]">👋🏻</span>
           </h2>
         </div>
-        <div className="flex flex-col flex-grow p-5 justify-evenly">
-          <div className="flex-shrink-0 leading-loose">
-            I am currently a 3<sup>rd</sup> year student at Rochester Institute
-            of Technology pursing an undergraduate degree in Computing Security
-            with a minor in Economics.
-            <br />
-            <br className="md:hidden" />I have participated in multiple CTF
-            competitions as well as developing vunerable boxes using Docker
-            Containers.
-            <br />
-            <br className="md:hidden" />I also have a passion for Software
-            Development. I have extensive experience in <code>Python</code>,{" "}
-            <code>JavaScript</code> /<code>TypeScript</code>, <code>C</code>/
-            <code>C++</code>, <code>Java</code>, and I am currently learning{" "}
-            <code>Go</code> and <code>Rust</code>.
-          </div>
-          <div className="leading-loose">
-            My course work includes:
-            <br />
-            <br className="hidden md:block" />
-            <ul className="list-item list-disc list-outside ml-10 marker:text-gray-400">
-              <li>Reverse Engineering and Malware Analysis</li>
-              <li>Computer System Forensics</li>
-              <li>Software Devlopment in Python and Java</li>
-              <li>Database and Data Modeling</li>
-              <li>System Administration 1 & 2</li>
+        <div className="flex flex-col md:flex-row flex-grow p-5 gap-3">
+          <div className="bg-white flex-grow rounded-xl p-5 leading-loose shadow-md">
+            <p className="m-5">
+              I am a{" "}
+              {currentYear <= 4 ? `${ordinal(currentYear)}-year` : "graduate"}{" "}
+              student in Computing Security with a minor in Economics from
+              Rochester Institute of Technology. My{" "}
+              {currentYear <= 4 ? "current" : ""} academic standing is a cGPA of
+              3.9/4 and a GPA of 4/4.
+            </p>
+            <p className="m-5">
+              I have experience developing secure scaling cloud technology
+              infrastructure using AWS and Google Cloud. I also have experience
+              in penetration testing and creating virtual attack environments.
+            </p>
+            <p className="mx-5 mt-5">
+              My coursework consists of various disciplines which include:
+            </p>
+            <ul className="list-item list-disc list-outside ml-10 marker:text-gray-700 mb-5">
+              <li>Software Development and Analysis</li>
+              <li>System Administration</li>
+              <li>Forensic Analysis</li>
+              <li>Malware Analysis</li>
+              <li>Network Software Penetration Testing</li>
             </ul>
+            <p className="m-5">
+              In 2022, I led a team of developers to create a cloud environment
+              using AWS. It would capture and store user data later integrated
+              into existing Salesforce CRMs.
+            </p>
+            <p className="m-5">
+              I have participated in multiple CTF (Capture The Flag)
+              competitions hosted by HackTheBox, TryHackMe, and picoCTF. CTF
+              Competitions focus on simulating real-world hacking scenarios from
+              reconnaissance, gaining and maintaining access, and privilege
+              escalation. I have ranked as high as 2nd nationally and
+              consistently placed in the top 0.1% globally.
+            </p>
+            <p className="m-5">
+              Utilizing the experience I gained in participating in CTFs and
+              coursework, I have developed multiple virtual environments using
+              Docker with predetermined vulnerabilities. These docker containers
+              were submitted to TryHackMe and HackTheBox.
+            </p>
           </div>
-          <div className="leading-loose py-5 md:py-3">
-            My current academic standing rests at a cGPA of 3.9/4 with my
-            previous two semesters yielding a GPA of 3.91/4 and 4/4
+          <div className="md:flex md:flex-col gap-3 hidden md:w-1/4 self-center whitespace-pre">
+            <ProgressProvider valueStart={0} valueEnd={(3.8 / 4) * 100}>
+              {(value) => (
+                <CircularProgressbar
+                  value={value}
+                  text="cGPA: 3.9/4"
+                  styles={buildStyles({
+                    // Rotation of path and trail, in number of turns (0-1)
+                    // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                    // Text size
+                    // How long animation takes to go from one percentage to another, in seconds
+                    pathTransitionDuration: 1,
+                    pathColor: `orange`,
+                    textColor: "#000",
+                    trailColor: "#d6d6d6",
+                    backgroundColor: "#3e98c7",
+                    textSize: "0.9em",
+                  })}
+                />
+              )}
+            </ProgressProvider>
+            <ProgressProvider valueStart={0} valueEnd={(4 / 4) * 100}>
+              {(value) => (
+                <CircularProgressbar
+                  value={value}
+                  text="GPA: 4/4"
+                  styles={buildStyles({
+                    // Rotation of path and trail, in number of turns (0-1)
+                    // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                    // Text size
+                    // How long animation takes to go from one percentage to another, in seconds
+                    pathTransitionDuration: 1,
+                    // Can specify path transition in more detail, or remove it entirely
+                    // pathTransition: 'none',
+                    // Colors
+                    pathColor: `orange`,
+                    textColor: "#000",
+                    trailColor: "#d6d6d6",
+                    backgroundColor: "#3e98c7",
+                    textSize: "0.9em",
+                  })}
+                />
+              )}
+            </ProgressProvider>
           </div>
         </div>
       </section>
