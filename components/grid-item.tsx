@@ -17,13 +17,12 @@ const GridItem: React.FC<GridItemProps> = ({
 }) => {
   return (
     <>
-      <span className="hidden md:block justify-self-center scale-90 xl:scale-110">
+      <span className="hidden md:block justify-self-center scale-90 xl:scale-110 hover:scale-110 xl:hover:scale-125">
         <Image
           src={gridImage}
           width="100%"
           height="100%"
           alt="logo"
-          className="rounded-full"
           objectFit="scale-down"
         />
       </span>
