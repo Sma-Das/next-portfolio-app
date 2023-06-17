@@ -9,6 +9,7 @@ import Footer from "../sections/footer";
 import LandingPage from "../sections/landing-page";
 import Sidebar from "../sections/sidebar";
 import Skills from "../sections/skills";
+import Projects from "../sections/projects";
 
 const Home: NextPage = () => {
   return (
@@ -43,10 +44,11 @@ const Home: NextPage = () => {
       <div className="flex">
         <Sidebar />
         <Layout>
-          <AboutMe />
           <Experience />
-          <Education />
+          <Projects />
           <Certifications />
+          <Education />
+          <AboutMe />
           <Skills />
         </Layout>
       </div>

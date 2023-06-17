@@ -5,17 +5,18 @@ import { SizeContext } from "./size-observer";
 export type SectionOffset = Map<string, number>;
 
 const sections = new Map<string, number>([
-  ["about-me", Infinity],
   ["experience", Infinity],
-  ["education", Infinity],
+  ["projects", Infinity],
   ["certifications", Infinity],
+  ["education", Infinity],
+  ["about-me", Infinity],
   ["skills", Infinity],
 ]);
 
 export const OffsetContext = React.createContext<SectionOffset>(sections);
 
 const OffsetObserver: React.FC<ObserverProps> = ({ children }) => {
-  const [offsetValues, setOffsetValues] = useState<SectionOffset>();
+  const [, setOffsetValues] = useState<SectionOffset>();
   const { innerWidth } = useContext(SizeContext);
   const handleOffset = useCallback((newOffsetValues: SectionOffset) => {
     setOffsetValues(() => newOffsetValues);
