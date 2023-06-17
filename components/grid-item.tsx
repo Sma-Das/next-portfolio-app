@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-type GridItemProps = {
+export type GridItemProps = {
   gridImage: string;
   heading: string;
   location: string;
@@ -26,7 +26,7 @@ const GridItem: React.FC<GridItemProps> = ({
           objectFit="scale-down"
         />
       </span>
-      <div className="grid grid-cols-4 grid-rows-4 col-span-full md:col-span-7 p-3 text-xs md:text-base">
+      <div className="grid grid-cols-4 grid-rows-4 col-span-full md:col-span-7 p-3 text-xs md:text-base rounded">
         <div className="col-span-2 row-span-1 font-bold ">
           <p className="animate-underline after:origin-bottom-right hover:after:origin-bottom-left after:bg-black">
             {heading}
