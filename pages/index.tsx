@@ -43,8 +43,8 @@ const Home: NextPage = () => {
       <div className="flex">
         <Sidebar />
         <Layout>
-          <AboutMe />
           <Experience />
+          <AboutMe />
           <Education />
           <Certifications />
           <Skills />
