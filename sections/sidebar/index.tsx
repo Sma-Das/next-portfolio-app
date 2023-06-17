@@ -9,20 +9,24 @@ import SidebarSocials, { Social } from "./socials";
 
 const routes: Array<Route> = [
   {
-    displayText: "About Me",
-    route: "#about-me",
-  },
-  {
     displayText: "Experience",
     route: "#experience",
+  },
+  {
+    displayText: "Projects",
+    route: "#projects",
+  },
+  {
+    displayText: "Certifications",
+    route: "#certifications",
   },
   {
     displayText: "Education",
     route: "#education",
   },
   {
-    displayText: "Certifications",
-    route: "#certifications",
+    displayText: "About Me",
+    route: "#about-me",
   },
   {
     displayText: "Skills",
