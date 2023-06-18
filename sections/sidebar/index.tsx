@@ -45,7 +45,7 @@ const socials: Array<Social> = [
   },
   {
     linkTo:
-      "https://docs.google.com/document/d/1jUCSyAGTy1O1_sw3cd2fgcKfp4Ov6Nxfya_uRUp-818",
+      "https://docs.google.com/document/d/e/2PACX-1vRqZJ6gMpRgaF8SaoagXsHCPsoXWLrQYS1Qut-BlZ64TpxUXZTnYVqvRmeLUet_ipsnKzMf4q2MUmJz/pub",
     icon: faGoogleDrive,
   },
 ];
