@@ -14,6 +14,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@vercel/analytics": "^1.0.1",
     "next": "12.2.4",
     "ordinal": "^1.0.3",
     "react": "18.2.0",
